@@ -1,0 +1,53 @@
+.phenomenons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    gap: 30px;
+    .element {
+        height: 300px;
+        width: 300px;
+        border: 1px solid #000;
+        text-align: center;
+        line-height: 300px;
+        cursor: pointer;
+        transition: 0.7s;
+        background-color: gray;
+        &:hover {
+            color: #fff;
+        }
+    }
+    &__top {
+        display: flex;
+        gap: 30px;
+        .mma {
+            border-radius: 100% 0 0 0;
+            &:hover {
+                background-color: cyan;
+            }
+        }
+        .bjj {
+            border-radius: 0 100% 0 0;
+            &:hover {
+                background-color: #a2653e;
+            }
+        }
+    }
+    &__bottom {
+        display: flex;
+        gap: 30px;
+        .box {
+            border-radius: 0 0 0 100%;
+            &:hover {
+                background-color: gray;
+            }
+        }
+        .thai-box {
+            border-radius: 0 0 100% 0;
+            &:hover {
+                background-color: firebrick;
+            }
+        }
+    }
+}
