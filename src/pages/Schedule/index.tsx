@@ -1,11 +1,11 @@
 import React from 'react';
 import './Schedule.scss';
-import Header from '../../includes/Header';
+import Header from '../../includes/Header/index.tsx';
 
 const Schedule = () => {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <div className="schedule">dasdsa</div>
         </>
     );
