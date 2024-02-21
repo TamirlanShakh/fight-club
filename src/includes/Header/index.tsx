@@ -32,7 +32,7 @@ const Header = () => {
                                 <a href="">Секции</a>
                             </li>
                             <li>
-                                <a href="">Расписание</a>
+                                <a href="/schedule">Расписание</a>
                             </li>
                             <li>
                                 <a href="">Стоимость</a>
