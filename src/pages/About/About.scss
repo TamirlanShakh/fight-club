@@ -31,9 +31,25 @@
 
     &__address {
         color: #fff;
-        font-size: 28px;
+        font-size: 27px;
         margin-top: 60px;
         margin-left: 60px;
         font-family: "Arial Black", Gadget, sans-serif;
+    }
+
+    &__phones {
+        color: #fff;
+        font-size: 26px;
+        margin-top: 50px;
+        margin-left: 60px;
+        font-family: Gadget, sans-serif;
+    }
+
+    &__timetable {
+        color: #fff;
+        font-size: 20px;
+        margin-top: 50px;
+        margin-left: 60px;
+        font-family: sans-serif;
     }
 }
