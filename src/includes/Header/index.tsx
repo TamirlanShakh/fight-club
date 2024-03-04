@@ -7,6 +7,7 @@ import CallIcon from '@mui/icons-material/Call';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -26,35 +27,35 @@ const Header = () => {
                     <nav className="nav-left">
                         <ul>
                             <li>
-                                <a href="">Зал</a>
+                                <Link to="">Зал</Link>
                             </li>
                             <li>
-                                <a href="">Секции</a>
+                                <Link to="">Секции</Link>
                             </li>
                             <li>
-                                <a href="/schedule">Расписание</a>
+                                <Link to="/schedule">Расписание</Link>
                             </li>
                             <li>
-                                <a href="">Стоимость</a>
+                                <Link to="">Стоимость</Link>
                             </li>
                         </ul>
                     </nav>
-                    <a href="/" className="header__logo">
+                    <Link to="/" className="header__logo">
                         <img src={logo} alt="" />
-                    </a>
+                    </Link>
                     <nav className="nav-right">
                         <ul>
                             <li>
-                                <a href="">Об Академии</a>
+                                <Link to="">Об Академии</Link>
                             </li>
                             <li>
-                                <a href="">Тренеры</a>
+                                <Link to="">Тренеры</Link>
                             </li>
                             <li>
-                                <a href="">Отзывы</a>
+                                <Link to="">Отзывы</Link>
                             </li>
                             <li>
-                                <a href="">Контакты</a>
+                                <Link to="">Контакты</Link>
                             </li>
                         </ul>
                     </nav>
