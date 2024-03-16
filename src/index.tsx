@@ -6,19 +6,31 @@ import Home from './pages/Home/index.tsx';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Schedule from './pages/Schedule/index.tsx';
 import About from './pages/About/index.tsx';
+import Coaches from './pages/Coaches/index.tsx';
+import MainPages from './pages/MainPages/index.tsx';
 
 const routes = createBrowserRouter([
     {
         path: '/',
-        element: <Home />,
-    },
-    {
-        path: '/about',
-        element: <About />,
-    },
-    {
-        path: '/schedule',
-        element: <Schedule />,
+        element: <MainPages />,
+        children: [
+            {
+                path: '/',
+                element: <Home />,
+            },
+            {
+                path: '/about',
+                element: <About />,
+            },
+            {
+                path: '/schedule',
+                element: <Schedule />,
+            },
+            {
+                path: '/coaches',
+                element: <Coaches />,
+            },
+        ],
     },
 ]);
 

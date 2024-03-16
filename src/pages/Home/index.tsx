@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../../includes/Header/index.tsx';
-import Footer from '../../includes/Footer/index.tsx';
-import SimpleSlider from '../../slider/Slider.tsx';
 import './Home.scss';
 
 const Home = () => {
@@ -13,7 +10,6 @@ const Home = () => {
 
     return (
         <>
-            <Header />
             <div className="sports">
                 <div className="sports__container container">
                     <div className={`card sports__section mma ${isClicked ? 'is-clicked' : ''}`} onClick={sportClick}>
@@ -86,7 +82,6 @@ const Home = () => {
             ) : (
                 ''
             )}
-            <Footer />
         </>
     );
 };

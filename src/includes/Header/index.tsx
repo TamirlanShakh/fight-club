@@ -49,7 +49,7 @@ const Header = () => {
                                 <Link to="">Об Академии</Link>
                             </li>
                             <li>
-                                <Link to="">Тренеры</Link>
+                                <Link to="/coaches">Тренеры</Link>
                             </li>
                             <li>
                                 <Link to="">Отзывы</Link>
