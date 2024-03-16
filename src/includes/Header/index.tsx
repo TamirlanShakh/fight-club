@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.scss';
-import logo from '../../images/logo.png';
 import PlaceIcon from '@mui/icons-material/Place';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CallIcon from '@mui/icons-material/Call';
@@ -41,7 +40,7 @@ const Header = () => {
                         </ul>
                     </nav>
                     <Link to="/" className="header__logo">
-                        <img src={logo} alt="" />
+                        <img src="/images/logo.png" alt="" />
                     </Link>
                     <nav className="nav-right">
                         <ul>
