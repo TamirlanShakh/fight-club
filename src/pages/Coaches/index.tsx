@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import './Coaches.scss';
 import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 import Coach from './Coach.tsx';
+import { sports, coaches } from './utils';
 
 const Coaches = () => {
-    const [value, setValue] = useState('');
+    const [selectedSport, setSelectedSport] = useState('');
 
-    const handleChange = (event: SelectChangeEvent) => {
-        setValue(event.target.value as string);
+    const handleChange = (event: any) => {
+        setSelectedSport(event.target.value);
     };
+
+    const filteredCoaches = coaches.filter(coach => coach.sport === selectedSport || selectedSport === '');
 
     return (
         <>
@@ -24,8 +27,9 @@ const Coaches = () => {
                     <div className="coaches__list-select">
                         <span>Направления</span>
                         <FormControl sx={{ width: '100%', maxWidth: 280 }} className="coaches-select">
-                            <InputLabel id="demo-simple-select-label">Выберите Направления</InputLabel>
-                            <Select labelId="demo-simple-select-label" id="demo-simple-select" value={value} label="Age" onChange={handleChange}>
+                            <InputLabel shrink={selectedSport !== ''}>Выберите направления</InputLabel>
+                            <Select label="" id="demo-simple-select" value={selectedSport} onChange={handleChange}>
+                                <MenuItem value={''}>Все Направления</MenuItem>
                                 <MenuItem value={'jiu'}>Джи-джитсу</MenuItem>
                                 <MenuItem value={'thai'}>Тайский-бокс</MenuItem>
                                 <MenuItem value={'mma'}>ММА</MenuItem>
@@ -34,10 +38,9 @@ const Coaches = () => {
                         </FormControl>
                     </div>
                     <div className="coaches__list-cards">
-                        <Coach />
-                        <Coach />
-                        <Coach />
-                        <Coach />
+                        {filteredCoaches.map((coach: ICoach) => (
+                            <Coach key={coach.id} sports={sports} coaches={[coach]} selectedSport={selectedSport} handleChange={handleChange} /> // передаем пропсы в компонент Coach
+                        ))}
                     </div>
                 </div>
             </div>
