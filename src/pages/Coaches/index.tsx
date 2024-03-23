@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Coaches.scss';
 import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 import Coach from './Coach.tsx';
-import { sports, coaches } from './utils';
+import { sports, coaches } from '../../utils/utils.js';
 
 const Coaches = () => {
     const [selectedSport, setSelectedSport] = useState('');

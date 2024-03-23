@@ -1,21 +1,31 @@
 export const sports = [
     {
+        id: 1,
         name: 'jiu',
+        rusname: 'джи-джитсу',
         color: 'blue',
     },
     {
+        id: 2,
         name: 'thai',
+        rusname: 'тайский-бокс',
         color: 'green',
     },
     {
+        id: 3,
         name: 'mma',
+        rusname: 'мма',
         color: 'brown',
     },
     {
+        id: 4,
         name: 'box',
+        rusname: 'бокс',
         color: 'red',
     },
 ];
+
+export const timeSlots = ['11:00 - 12:00', '12:00 - 13:30', '16:00 - 17:30', '17:30 - 19:00', '19:00 - 20:30', '20:30 - 22:00'];
 
 export const coaches = [
     {

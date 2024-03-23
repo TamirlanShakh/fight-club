@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
-import Slider from 'react-slick';
 import './Schedule.scss';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import { sports, timeSlots } from '../../utils/utils.js';
 
 interface ScheduleProps {}
 
@@ -17,25 +18,36 @@ interface Day {
         | undefined;
 }
 
-const sports = [
-    { id: 1, name: 'Тайский бокс' },
-    { id: 2, name: 'ММА' },
-    { id: 3, name: 'Бразильский Джиу-джитсу' },
-    { id: 4, name: 'Бокс' },
-];
-
-const timeSlots = ['11:00 - 12:00', '12:00 - 13:30', '16:00 - 17:30', '17:30 - 19:00', '19:00 - 20:30', '20:30 - 22:00'];
-
 const sportColors: { [key: string]: string } = {
-    'Тайский бокс': 'firebrick', // Красный для Огня
-    ММА: 'forestgreen', // Зеленый для Земли
-    'Бразильский Джиу-джитсу': 'blue', // Синий для Воды
-    Бокс: 'goldenrod', // Желтый для Воздуха
+    'тайский-бокс': 'green',
+    мма: 'brown',
+    'джиу-джитсу': 'blue',
+    бокс: 'red',
 };
 
 const Schedule: React.FC<ScheduleProps> = () => {
     const [currentWeekIndex, setCurrentWeekIndex] = useState(0);
     const [currentSport, setCurrentSport] = useState(sports[0]);
+    const [open, setOpen] = useState(false);
+    const [selectedDay, setSelectedDay] = useState<Day | null>(null);
+    const [selectedHour, setSelectedHour] = useState<{ time: string; event: string } | null>(null);
+    const [openDialogIndex, setOpenDialogIndex] = useState<number | null>(null);
+
+    const onOpen = (dayIndex: number, hour: { time: string; event: string }) => {
+        setOpenDialogIndex(dayIndex * filteredHours.length + filteredHours.indexOf(hour));
+        setOpen(true);
+        setSelectedDay(days[dayIndex]);
+        setSelectedHour(hour);
+    };
+
+    const onClose = () => {
+        setOpen(false);
+        setOpenDialogIndex(null);
+    };
+
+    const handleSportClick = (sport: any) => {
+        setCurrentSport(sport);
+    };
 
     const currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0); // Сброс времени до полуночи
@@ -44,20 +56,27 @@ const Schedule: React.FC<ScheduleProps> = () => {
     const startOfWeek = new Date(currentDate);
     startOfWeek.setDate(currentDate.getDate() - currentDate.getDay() + 1);
 
-    const schedules = [
-        {
-            day: 1, // Понедельник
-            hours: [
-                { time: timeSlots[0], event: 'Тайский бокс' },
-                { time: timeSlots[1], event: 'ММА' },
-                { time: timeSlots[2], event: 'Бразильский Джиу-джитсу' },
-                { time: timeSlots[3], event: 'Бокс' },
-                { time: timeSlots[4], event: 'Тайский бокс' },
-                { time: timeSlots[5], event: 'Йога' },
-            ],
-        },
-        // Добавьте еще дни здесь...
-    ];
+    const events = ['тайский-бокс', 'мма', 'джиу-джитсу', 'бокс'];
+
+    const numberOfDays = 21;
+    const daysArray = Array.from({ length: numberOfDays }, (_, i) => i + 1);
+
+    const schedules = daysArray.map(day => {
+        const hours = timeSlots.map(timeSlot => {
+            const eventIndex = Math.floor(Math.random() * events.length);
+            const event = events[eventIndex];
+
+            return {
+                time: timeSlot,
+                event: event,
+            };
+        });
+
+        return {
+            day: day,
+            hours: hours,
+        };
+    });
 
     const handleNextWeek = () => {
         setCurrentWeekIndex(prevIndex => Math.min(prevIndex + 1, 2));
@@ -127,52 +146,90 @@ const Schedule: React.FC<ScheduleProps> = () => {
     }, [currentSport, days]);
 
     const getColorForDay = (day: Day) => {
-        if (!day.scheduleData) {
-            return '';
+        return sportColors[currentSport.rusname];
+    };
+
+    const getEventForDayAndTime = (day: Day, time: string) => {
+        if (day.scheduleData) {
+            const hour = day.scheduleData.hours.find(hour => hour.time === time);
+            return hour ? hour.event : '';
         }
-        const events = day.scheduleData.hours.filter(hour => hour.event === currentSport.name);
-        return events.length > 0 ? sportColors[currentSport.name] : '';
+        return '';
     };
 
     return (
         <>
-            <button onClick={handlePrevWeek}>Предыдущая неделя</button>
-            <button onClick={handleNextWeek}>Следующая неделя</button>
-            <div className="sports-tabs">
-                {sports.map(sport => (
-                    <button key={sport.id} className={`sports-tab ${sport.name === currentSport.name ? 'active' : ''}`} onClick={() => setCurrentSport(sport)}>
-                        {sport.name}
-                    </button>
-                ))}
+            {' '}
+            <div className="schedule">
+                <div className="container">
+                    <div className="schedule__title">Расписание занятий</div>
+                    <div className="schedule__buttons">
+                        <button onClick={handlePrevWeek}>Предыдущая неделя</button>
+                        <div className="sports-tabs">
+                            {sports.map(sport => (
+                                <button
+                                    key={sport.id}
+                                    className={`sports-tab ${sport.rusname === currentSport.rusname ? 'active' : ''}`}
+                                    onClick={() => handleSportClick(sport)}
+                                    style={{ backgroundColor: sport.rusname ? sport.color : '' }}
+                                >
+                                    {sport.rusname}
+                                </button>
+                            ))}
+                        </div>
+                        <button onClick={handleNextWeek}>Следующая неделя</button>
+                    </div>
+
+                    <table className="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Время</th>
+                                {days.map((day, index) => {
+                                    return (
+                                        <th key={index} className="schedule-date" style={{ backgroundColor: getColorForDay(day) }} scope="col">
+                                            {day.date.toLocaleDateString('ru-RU', { day: '2-digit', month: 'short' })}
+                                        </th>
+                                    );
+                                })}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {filteredHours.map((hour, index) => (
+                                <tr key={index}>
+                                    <th className="schedule-time" scope="row">
+                                        {hour.time}
+                                    </th>
+                                    {days.map((day, dayIndex) => (
+                                        <td key={dayIndex} className="schedule-cell schedule-cell-sport">
+                                            <Button
+                                                onClick={() => onOpen(dayIndex, { time: hour.time, event: getEventForDayAndTime(day, hour.time) })}
+                                                variant="text"
+                                                fullWidth
+                                            >
+                                                занятие
+                                            </Button>
+                                            {open && selectedDay?.date.getTime() === day.date.getTime() && selectedHour?.time === hour.time && (
+                                                <Dialog open={true} onClose={onClose}>
+                                                    <DialogTitle>{selectedDay?.date.toLocaleDateString('ru-RU')}</DialogTitle>
+                                                    <DialogContent>
+                                                        <DialogContentText>{selectedHour?.time}</DialogContentText>
+                                                        <DialogContentText>{currentSport?.rusname}</DialogContentText>
+                                                    </DialogContent>
+                                                    <DialogActions>
+                                                        <Button onClick={onClose} color="primary">
+                                                            Закрыть
+                                                        </Button>
+                                                    </DialogActions>
+                                                </Dialog>
+                                            )}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <table className="schedule-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        {days.map((day, index) => {
-                            const color = getColorForDay(day);
-                            return (
-                                <th key={index} className="schedule-date" style={{ backgroundColor: color }} scope="col">
-                                    {day.date.toLocaleDateString('ru-RU', { day: '2-digit', month: 'short' })}
-                                </th>
-                            );
-                        })}
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredHours.map((hour, index) => (
-                        <tr key={index}>
-                            <th className="schedule-time" scope="row">
-                                {hour.time}
-                            </th>
-                            {days.map((day, dayIndex) => {
-                                const event = day.scheduleData?.hours.find(h => h.time === hour.time)?.event;
-                                return <td key={dayIndex} className="schedule-cell"></td>;
-                            })}
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
         </>
     );
 };
