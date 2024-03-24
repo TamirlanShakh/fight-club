@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Dialog } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { ICoach } from './types';
+import { Link } from 'react-router-dom';
 
 interface CoachProps {
     sports: any;
@@ -72,11 +73,11 @@ const Coach = ({ sports, coaches, selectedSport, handleChange }: CoachProps) => 
                                             <form action="">
                                                 <div className="popup__input">
                                                     <span>Ваше имя</span>
-                                                    <input type="text" placeholder="Введите ваше имя" />
+                                                    <input type="text" placeholder="Введите ваше имя" required />
                                                 </div>
                                                 <div className="popup__input">
                                                     <span>Ваш телефон</span>
-                                                    <input type="text" placeholder="+7 (999) 999-99-99" />
+                                                    <input type="text" placeholder="+7 (999) 999-99-99" required />
                                                 </div>
                                                 <div className="popup__button">
                                                     <button>Записаться на тренировку</button>
@@ -84,7 +85,7 @@ const Coach = ({ sports, coaches, selectedSport, handleChange }: CoachProps) => 
                                                 <label htmlFor="" className="popup__privacy">
                                                     <input type="checkbox" checked />
                                                     <span>
-                                                        Я согласен с <a href="">политикой конфиденциальности</a>
+                                                        Я согласен с <Link to="">политикой конфиденциальности</Link>
                                                     </span>
                                                 </label>
                                             </form>
