@@ -205,9 +205,7 @@ const Schedule: React.FC<ScheduleProps> = () => {
                                                 onClick={() => onOpen(dayIndex, { time: hour.time, event: getEventForDayAndTime(day, hour.time) })}
                                                 variant="text"
                                                 fullWidth
-                                            >
-                                                занятие
-                                            </Button>
+                                            ></Button>
                                             {open && selectedDay?.date.getTime() === day.date.getTime() && selectedHour?.time === hour.time && (
                                                 <Dialog open={true} onClose={onClose}>
                                                     <DialogTitle>{selectedDay?.date.toLocaleDateString('ru-RU')}</DialogTitle>
