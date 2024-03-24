@@ -1,12 +1,12 @@
 import React from 'react';
 import './Header.scss';
-import logo from '../../images/logo.png';
 import PlaceIcon from '@mui/icons-material/Place';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CallIcon from '@mui/icons-material/Call';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -26,35 +26,35 @@ const Header = () => {
                     <nav className="nav-left">
                         <ul>
                             <li>
-                                <a href="">Зал</a>
+                                <Link to="">Зал</Link>
                             </li>
                             <li>
-                                <a href="">Секции</a>
+                                <Link to="">Секции</Link>
                             </li>
                             <li>
-                                <a href="/schedule">Расписание</a>
+                                <Link to="/schedule">Расписание</Link>
                             </li>
                             <li>
-                                <a href="">Стоимость</a>
+                                <Link to="">Стоимость</Link>
                             </li>
                         </ul>
                     </nav>
-                    <a href="/" className="header__logo">
-                        <img src={logo} alt="" />
-                    </a>
+                    <Link to="/" className="header__logo">
+                        <img src="/images/logo.png" alt="" />
+                    </Link>
                     <nav className="nav-right">
                         <ul>
                             <li>
-                                <a href="">Об Академии</a>
+                                <Link to="">Об Академии</Link>
                             </li>
                             <li>
-                                <a href="">Тренеры</a>
+                                <Link to="/coaches">Тренеры</Link>
                             </li>
                             <li>
-                                <a href="">Отзывы</a>
+                                <Link to="">Отзывы</Link>
                             </li>
                             <li>
-                                <a href="">Контакты</a>
+                                <Link to="">Контакты</Link>
                             </li>
                         </ul>
                     </nav>
@@ -88,7 +88,31 @@ const Header = () => {
                             Записаться
                         </Button>
                         <Dialog open={open} onClose={onClose}>
-                            <h1>sadas</h1>
+                            <Dialog open={open} onClose={onClose} className="popup">
+                                <div className="popup__container">
+                                    <div className="popup__title">Оставьте заявку.</div>
+                                    <div className="popup__subtitle">Мы свяжемся с вами, чтобы записать на тренировку в удобное для вас время</div>
+                                    <form action="">
+                                        <div className="popup__input">
+                                            <span>Ваше имя</span>
+                                            <input type="text" placeholder="Введите ваше имя" required />
+                                        </div>
+                                        <div className="popup__input">
+                                            <span>Ваш телефон</span>
+                                            <input type="text" placeholder="+7 (999) 999-99-99" required />
+                                        </div>
+                                        <div className="popup__button">
+                                            <button>Записаться на тренировку</button>
+                                        </div>
+                                        <label htmlFor="" className="popup__privacy">
+                                            <input type="checkbox" checked />
+                                            <span>
+                                                Я согласен с <Link to="">политикой конфиденциальности</Link>
+                                            </span>
+                                        </label>
+                                    </form>
+                                </div>
+                            </Dialog>
                         </Dialog>
                     </div>
                 </div>
