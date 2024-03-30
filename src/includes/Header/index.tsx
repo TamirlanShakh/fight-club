@@ -51,7 +51,7 @@ const Header = () => {
                                 <Link to="/coaches">Тренеры</Link>
                             </li>
                             <li>
-                                <Link to="">Отзывы</Link>
+                                <Link to="/reviews">Отзывы</Link>
                             </li>
                             <li>
                                 <Link to="">Контакты</Link>

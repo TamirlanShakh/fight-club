@@ -162,7 +162,7 @@ const Schedule: React.FC<ScheduleProps> = () => {
             {' '}
             <div className="schedule">
                 <div className="container">
-                    <div className="schedule__title">Расписание занятий</div>
+                    <h1 className="schedule__title">Расписание занятий</h1>
                     <div className="schedule__buttons">
                         <button onClick={handlePrevWeek}>Предыдущая неделя</button>
                         <div className="sports-tabs">
