@@ -50,6 +50,8 @@
     }
     &__list {
         display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
         &-review {
             max-width: 28%;
             width: 100%;
