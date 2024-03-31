@@ -39,7 +39,7 @@ const Coaches = () => {
                     </div>
                     <div className="coaches__list-cards">
                         {filteredCoaches.map((coach: ICoach) => (
-                            <Coach key={coach.id} sports={sports} coaches={[coach]} selectedSport={selectedSport} handleChange={handleChange} /> // передаем пропсы в компонент Coach
+                            <Coach key={coach.id} sports={sports} coaches={[coach]} selectedSport={selectedSport} handleChange={handleChange} />
                         ))}
                     </div>
                 </div>

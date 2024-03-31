@@ -8,6 +8,7 @@ import Schedule from './pages/Schedule/index.tsx';
 import About from './pages/About/index.tsx';
 import Coaches from './pages/Coaches/index.tsx';
 import MainPages from './pages/MainPages/index.tsx';
+import Reviews from './pages/Reviews/index.tsx';
 
 const routes = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const routes = createBrowserRouter([
             {
                 path: '/coaches',
                 element: <Coaches />,
+            },
+            {
+                path: '/reviews',
+                element: <Reviews />,
             },
         ],
     },
