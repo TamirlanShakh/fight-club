@@ -26,7 +26,6 @@ const Reviews = () => {
     const handleReviewClick = (src: string) => {
         setReviewSrc(src);
     };
-    console.log(reviews);
 
     const filteredReviews = reviews.filter(review => reviewSrc === '' || review.src === reviewSrc);
 
