@@ -1,12 +1,15 @@
 import React, { useCallback, useState } from 'react';
 import './Reviews.scss';
 import { Button, IconButton, Menu, MenuItem, Tab, Tabs, ToggleButton } from '@mui/material';
-import { Link } from 'react-router-dom';
+import Review from './Review.tsx';
+import { reviews } from '../../utils/utils.js';
+import { IReview } from './types.ts';
 
 const Reviews = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const [selected, setSelected] = React.useState(false);
-    const [value, setValue] = React.useState(2);
+    const [value, setValue] = React.useState(0);
+    const [reviewSrc, setReviewSrc] = useState('');
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -20,6 +23,13 @@ const Reviews = () => {
         setAnchorEl(null);
     };
 
+    const handleReviewClick = (src: string) => {
+        setReviewSrc(src);
+    };
+    console.log(reviews);
+
+    const filteredReviews = reviews.filter(review => reviewSrc === '' || review.src === reviewSrc);
+
     return (
         <>
             <section className="reviews">
@@ -30,10 +40,10 @@ const Reviews = () => {
                 <div className="container">
                     <div className="reviews__tabs">
                         <Tabs value={value} onChange={handleChange} aria-label="icon tabs example" className="reviews__tabs-head">
-                            <Tab label="Все" />
-                            <Tab label="2Gis" />
-                            <Tab label="Google" />
-                            <Tab label="Yandex" />
+                            <Tab label="Все" onClick={() => handleReviewClick('')} />
+                            <Tab label="2Gis" onClick={() => handleReviewClick('2gis')} />
+                            <Tab label="Google" onClick={() => handleReviewClick('google')} />
+                            <Tab label="Yandex" onClick={() => handleReviewClick('yandex')} />
                         </Tabs>
                         <div className="reviews__tabs-body">
                             <div className="reviews__tabs-stars">
@@ -84,29 +94,9 @@ const Reviews = () => {
                 </div>
                 <div className="container">
                     <div className="reviews__list">
-                        <div className="reviews__list-review">
-                            <div className="reviews__list-info">
-                                <img src="../../images/icons/user.svg" alt="" className="reviews__list-user" />
-                                <div className="reviews__list-data">
-                                    <div className="reviews__list-name">Андрей Андреев</div>
-                                    <div className="reviews__list-stars">
-                                        <img src="../../images/icons/star.svg" alt="" />
-                                        <img src="../../images/icons/star.svg" alt="" />
-                                        <img src="../../images/icons/star.svg" alt="" />
-                                        <img src="../../images/icons/star.svg" alt="" />
-                                        <img src="../../images/icons/star.svg" alt="" />
-                                    </div>
-                                    <div className="reviews_list-date">10 апреля 2024</div>
-                                </div>
-                            </div>
-                            <div className="reviews__list-text">
-                                Прекрасный клуб, отзывчивый персонал, который всегда найдет нужный для тебя подход, чистые залы, что не может не радовать, всем
-                                советую!
-                            </div>
-                            <Link to="/" className="reviews__list-link">
-                                Открыть Яндекс.Карты
-                            </Link>
-                        </div>
+                        {filteredReviews.map(review => (
+                            <Review key={review.id} review={review} />
+                        ))}
                     </div>
                 </div>
             </section>
