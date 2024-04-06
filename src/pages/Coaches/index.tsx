@@ -36,7 +36,7 @@ const Coaches = () => {
                     <div className="coaches__list-select">
                         <span className="coaches__list-select-views">Направления</span>
                         <FormControl sx={{ width: '100%', maxWidth: 280 }} className="coaches-select">
-                            <InputLabel shrink={selectedSport !== ''}>Выберите направления</InputLabel>
+                            <InputLabel shrink={selectedSport !== ''}>Выберите направление</InputLabel>
                             <Select label="" id="demo-simple-select" value={selectedSport} onChange={handleChange}>
                                 <MenuItem value={''}>Все Направления</MenuItem>
                                 <MenuItem value={'jiu'}>Джи-джитсу</MenuItem>
