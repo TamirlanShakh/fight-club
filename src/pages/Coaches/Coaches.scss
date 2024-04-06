@@ -5,16 +5,32 @@ $bjj: #0c0cc4;
 
 .coaches {
     padding: 30px 0;
-    &__title {
-        font-size: 48px;
-        text-transform: uppercase;
+    &__header {
+        background-color: #f5f5f5;
+        padding: 30px 0;
         margin-bottom: 20px;
+    }
+    &__title {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        font-weight: 500;
+        text-align: inherit;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 10px;
+        span {
+            color: $box;
+        }
     }
     &__text {
         display: block;
         margin-bottom: 25px;
-        max-width: 60%;
         line-height: 1.4rem;
+        text-align: center;
+        width: 100%;
+        font-size: 1.375rem;
+        line-height: 1.37;
+        font-weight: 400;
     }
     &__list {
         &-select {
@@ -31,7 +47,7 @@ $bjj: #0c0cc4;
                     color: #000;
                 }
                 fieldset {
-                    border: 1px solid red !important;
+                    border: 1px solid $box !important;
                     outline: none;
                 }
                 div {
@@ -46,7 +62,7 @@ $bjj: #0c0cc4;
                         color: #000;
                     }
                     svg {
-                        fill: red;
+                        fill: $box;
                     }
                 }
             }
@@ -72,7 +88,7 @@ $bjj: #0c0cc4;
         justify-content: space-between;
         max-height: 627px;
         display: flex;
-        border-left: 7px solid red;
+        border-left: 7px solid $box;
         box-sizing: border-box;
         &.mma {
             border-left: 7px solid $mma;
@@ -161,7 +177,7 @@ $bjj: #0c0cc4;
                 width: 7px;
             }
             &::-webkit-scrollbar-thumb {
-                background-color: red;
+                background-color: $box;
             }
             &::-webkit-scrollbar-track {
                 background-color: #f5f5f5;

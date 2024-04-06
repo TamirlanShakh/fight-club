@@ -1,3 +1,8 @@
+$mma: #eee67d;
+$box: #e31e24;
+$thai: #0f3f0f;
+$bjj: #0c0cc4;
+
 .reviews {
     .container {
         &:nth-child(2) {
@@ -8,10 +13,15 @@
         }
     }
     &__title {
-        font-size: 48px;
-        text-transform: uppercase;
-        margin-bottom: 10px;
+        font-size: 3.5rem;
+        line-height: 1.2;
         font-weight: 500;
+        text-align: inherit;
+        text-transform: uppercase;
+        text-align: center;
+        span {
+            color: $box;
+        }
     }
     &__subtitle {
         font-size: 1.375rem;
@@ -19,6 +29,7 @@
         font-weight: 500;
         text-align: inherit;
         margin-bottom: 30px;
+        text-align: center;
     }
     &__tabs {
         width: 100%;

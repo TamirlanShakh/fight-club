@@ -1,3 +1,8 @@
+$mma: #eee67d;
+$box: #e31e24;
+$thai: #0f3f0f;
+$bjj: #0c0cc4;
+
 .header {
     max-width: 100%;
     display: flex;
@@ -39,31 +44,41 @@
                 transition: color 0.3s ease, opacity 0.3s ease;
                 a {
                     text-decoration: none;
-                    font-size: 16px;
+                    font-size: 18px;
                     color: #000;
                     position: relative;
                     overflow: hidden;
-                    &:hover {
-                        transition: 0.3;
-                        color: red;
-                        &::before {
-                            left: 0;
-                            transition: left 0.3s ease, right 0.3s ease, width 0.3s ease;
-                            background-color: red;
-                        }
-                    }
-                    &::before {
-                        content: '';
+                    padding-bottom: 3px;
+                    &:after {
                         display: block;
                         position: absolute;
-                        bottom: -5px;
+                        content: '';
+                        transition: all 0.5s;
+                        width: 0%;
+                        margin: auto;
                         height: 2px;
-                        background-color: transparent;
-                        right: 100%;
-                        width: 100%;
-                        z-index: -1;
-                        pointer-events: none;
+                        bottom: 0;
                     }
+                    &:hover {
+                        color: $box;
+                        &:after {
+                            width: 100%;
+                            height: 2px;
+                            background-color: $box;
+                        }
+                    }
+                    // &::before {
+                    //     content: '';
+                    //     display: block;
+                    //     position: absolute;
+                    //     bottom: -5px;
+                    //     height: 2px;
+                    //     background-color: transparent;
+                    //     right: 100%;
+                    //     width: 100%;
+                    //     z-index: -1;
+                    //     pointer-events: none;
+                    // }
                 }
             }
         }
@@ -225,7 +240,7 @@
             max-width: 100%;
             padding: 26px 20px;
             width: 100%;
-            background-color: #e62f43;
+            background-color: $box;
             color: #f2f2f2;
             text-transform: uppercase;
             margin-bottom: 8px;

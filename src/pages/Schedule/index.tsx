@@ -161,12 +161,17 @@ const Schedule: React.FC<ScheduleProps> = () => {
         document.title = 'Расписание тренировок';
     }, []);
 
+    let toDay = new Date();
+
     return (
         <>
             {' '}
             <div className="schedule">
                 <div className="container">
-                    <h1 className="schedule__title">Расписание занятий</h1>
+                    <h1 className="schedule__title">
+                        Расписание тренировок <br />
+                        <span>Fight club</span>
+                    </h1>
                     <div className="schedule__buttons">
                         <button onClick={handlePrevWeek}>Предыдущая неделя</button>
                         <div className="sports-tabs">
@@ -188,10 +193,11 @@ const Schedule: React.FC<ScheduleProps> = () => {
                         <thead>
                             <tr>
                                 <th>Время</th>
+
                                 {days.map((day, index) => {
                                     return (
                                         <th key={index} className="schedule-date" style={{ backgroundColor: getColorForDay(day) }} scope="col">
-                                            {day.date.toLocaleDateString('ru-RU', { day: '2-digit', month: 'short' })}
+                                            {index + 1 == toDay.getDay() ? 'Сегодня' : day.date.toLocaleDateString('ru-RU', { day: '2-digit', month: 'short' })}
                                         </th>
                                     );
                                 })}

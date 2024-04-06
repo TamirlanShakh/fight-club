@@ -25,12 +25,13 @@ const Academy = () => {
                         <div className="academy__top-about-left">
                             <img src="/images/logo.png" alt="" />
                             <h1 className="title">
-                                Академия единоборств <span>Fighting Club</span>
+                                Академия единоборств <br />
+                                <span>Fight Club</span>
                             </h1>
                         </div>
                         <div className="academy__top-about-right">
                             <span>
-                                Академия единоборств Fighting Club — одно из крупнейших и наиболее известных спортивных учреждений в России. Она была основана в
+                                Академия единоборств Fight Club — одно из крупнейших и наиболее известных спортивных учреждений в России. Она была основана в
                                 2023 году с целью подготовки профессиональных спортсменов в области боевых искусств.
                             </span>
                             <span>
@@ -59,22 +60,22 @@ const Academy = () => {
                         <h2 className="title">СЕКЦИИ</h2>
                         <span className="subtitle">Групповые и индивидуальные занятия для детей и взрослых.</span>
                         <div className="academy__bottom-about-sections">
-                            <div className="section" onClick={onOpen}>
+                            <Link to={'/section/bjj'} className="section" onClick={onOpen}>
                                 <img src="/images/bjj.png" alt="" />
                                 <span className="bjj">Джиу-джитсу(BJJ)</span>
-                            </div>
-                            <div className="section" onClick={onOpen}>
+                            </Link>
+                            <Link to={'/section/mma'} className="section" onClick={onOpen}>
                                 <img src="/images/mma.jpg" alt="" />
                                 <span className="mma">ММА</span>
-                            </div>
-                            <div className="section" onClick={onOpen}>
+                            </Link>
+                            <Link to={'/section/box'} className="section" onClick={onOpen}>
                                 <img src="/images/box.jpg" alt="" />
                                 <span className="box">Бокс</span>
-                            </div>
-                            <div className="section" onClick={onOpen}>
+                            </Link>
+                            <Link to={'/section/thai'} className="section" onClick={onOpen}>
                                 <img src="/images/thai-box.jpg" alt="" />
                                 <span className="thai">Тайский бокс</span>
-                            </div>
+                            </Link>
                             <Dialog open={open} onClose={onClose}>
                                 <Dialog open={open} onClose={onClose} className="popup">
                                     <div className="popup__container">

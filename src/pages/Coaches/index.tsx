@@ -20,13 +20,18 @@ const Coaches = () => {
     return (
         <>
             <div className="coaches">
-                <div className="container">
-                    <h1 className="coaches__title">Тренеры fight-club</h1>
-                    <span className="coaches__text">
-                        С персональным тренером результаты будут еще быстрее. Он составит программу тренировок и питания, грамотно потренирует, мотивирует и
-                        поможет добиться результата.
-                    </span>
+                <div className="coaches__header">
+                    <div className="container ">
+                        <h1 className="coaches__title">
+                            Тренеры <span>fight club</span>
+                        </h1>
+                        <span className="coaches__text">
+                            Fight-club – не просто команда, это семья. Здесь каждый участник чувствует поддержку и заботу со стороны тренеров и коллег.
+                            Благодаря этому, наши ученики добились значительных успехов и продолжают развиваться, ставя перед собой новые цели и задачи.
+                        </span>
+                    </div>
                 </div>
+
                 <div className="coaches__list container">
                     <div className="coaches__list-select">
                         <span className="coaches__list-select-views">Направления</span>
