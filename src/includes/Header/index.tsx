@@ -45,7 +45,7 @@ const Header = () => {
                     <nav className="nav-right">
                         <ul>
                             <li>
-                                <Link to="">Об Академии</Link>
+                                <Link to="/academy">Об Академии</Link>
                             </li>
                             <li>
                                 <Link to="/coaches">Тренеры</Link>

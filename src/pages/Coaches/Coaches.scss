@@ -1,7 +1,7 @@
-$mma: brown;
-$box: red;
-$thai: green;
-$jiu: blue;
+$mma: #eee67d;
+$box: #e31e24;
+$thai: #0f3f0f;
+$bjj: #0c0cc4;
 
 .coaches {
     padding: 30px 0;
@@ -124,18 +124,18 @@ $jiu: blue;
             }
         }
         &.jiu {
-            border-left: 7px solid $jiu;
+            border-left: 7px solid $bjj;
 
             .coach__more {
                 &::-webkit-scrollbar-thumb {
-                    background-color: $jiu;
+                    background-color: $bjj;
                 }
             }
             .coach__button {
                 button {
-                    border: 1px solid $jiu;
+                    border: 1px solid $bjj;
                     &:hover {
-                        background-color: $jiu;
+                        background-color: $bjj;
                     }
                 }
             }
