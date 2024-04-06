@@ -45,10 +45,10 @@ const Reviews = () => {
                 <div className="container">
                     <div className="reviews__tabs">
                         <Tabs value={value} onChange={handleChange} aria-label="icon tabs example" className="reviews__tabs-head">
-                            <Tab label="Все" onClick={() => handleReviewClick('')} />
-                            <Tab label="2Gis" onClick={() => handleReviewClick('2gis')} />
-                            <Tab label="Google" onClick={() => handleReviewClick('google')} />
-                            <Tab label="Yandex" onClick={() => handleReviewClick('yandex')} />
+                            <Tab label="Все" onClick={() => handleReviewClick('')} className="button" />
+                            <Tab label="2Gis" onClick={() => handleReviewClick('2gis')} className="button" />
+                            <Tab label="Google" onClick={() => handleReviewClick('google')} className="button" />
+                            <Tab label="Yandex" onClick={() => handleReviewClick('yandex')} className="button" />
                         </Tabs>
                         <div className="reviews__tabs-body">
                             <div className="reviews__tabs-stars">

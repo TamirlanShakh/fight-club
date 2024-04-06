@@ -36,6 +36,9 @@ $bjj: #0c0cc4;
         width: 100%;
         &-head {
             margin-bottom: 20px;
+            .button {
+                font-family: 'Jost';
+            }
         }
         &-body {
             display: flex;
@@ -49,6 +52,7 @@ $bjj: #0c0cc4;
         }
         &-button {
             .button {
+                font-family: 'Jost';
             }
             &-option {
                 width: 150px;
