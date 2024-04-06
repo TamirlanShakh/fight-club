@@ -9,6 +9,7 @@ import About from './pages/About/index.tsx';
 import Coaches from './pages/Coaches/index.tsx';
 import MainPages from './pages/MainPages/index.tsx';
 import Reviews from './pages/Reviews/index.tsx';
+import Academy from './pages/Academy/index.tsx';
 
 const routes = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const routes = createBrowserRouter([
             {
                 path: '/reviews',
                 element: <Reviews />,
+            },
+            {
+                path: '/academy',
+                element: <Academy />,
             },
         ],
     },
