@@ -3,25 +3,25 @@ export const sports = [
         id: 1,
         name: 'jiu',
         rusname: 'джи-джитсу',
-        color: 'blue',
+        color: '#0c0cc4',
     },
     {
         id: 2,
         name: 'thai',
         rusname: 'тайский-бокс',
-        color: 'green',
+        color: '#0f3f0f',
     },
     {
         id: 3,
         name: 'mma',
         rusname: 'мма',
-        color: 'brown',
+        color: '#eee67d',
     },
     {
         id: 4,
         name: 'box',
         rusname: 'бокс',
-        color: 'red',
+        color: '#e31e24',
     },
 ];
 

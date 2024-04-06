@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Coaches.scss';
 import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 import Coach from './Coach.tsx';
@@ -13,6 +13,10 @@ const Coaches = () => {
 
     const filteredCoaches = coaches.filter(coach => coach.sport === selectedSport || selectedSport === '');
 
+    useEffect(() => {
+        document.title = 'Тренеры';
+    }, []);
+
     return (
         <>
             <div className="coaches">
@@ -25,7 +29,7 @@ const Coaches = () => {
                 </div>
                 <div className="coaches__list container">
                     <div className="coaches__list-select">
-                        <span>Направления</span>
+                        <span className="coaches__list-select-views">Направления</span>
                         <FormControl sx={{ width: '100%', maxWidth: 280 }} className="coaches-select">
                             <InputLabel shrink={selectedSport !== ''}>Выберите направления</InputLabel>
                             <Select label="" id="demo-simple-select" value={selectedSport} onChange={handleChange}>

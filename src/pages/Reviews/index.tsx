@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Reviews.scss';
 import { Button, IconButton, Menu, MenuItem, Tab, Tabs, ToggleButton } from '@mui/material';
 import Review from './Review.tsx';
@@ -28,6 +28,10 @@ const Reviews = () => {
     };
 
     const filteredReviews = reviews.filter(review => reviewSrc === '' || review.src === reviewSrc);
+
+    useEffect(() => {
+        document.title = 'Отзывы';
+    }, []);
 
     return (
         <>

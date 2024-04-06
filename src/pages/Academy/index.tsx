@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Academy.scss';
 import { Link } from 'react-router-dom';
 import { Dialog } from '@mui/material';
@@ -13,6 +13,10 @@ const Academy = () => {
     const onClose = () => {
         setOpen(false);
     };
+    useEffect(() => {
+        document.title = 'Об Академии';
+    }, []);
+
     return (
         <>
             <main className="academy">
@@ -41,6 +45,10 @@ const Academy = () => {
                         <div className="title">
                             О создателе <br />
                             {/* <span>Fighting Club</span> */}
+                        </div>
+                        <div className="creator">
+                            <span>Андрей Андреев</span> — владелец и главный тренер Fight Club, известен как один из самых успешных инструкторов боевых искусств
+                            в Европе.
                         </div>
                         <img src="/images/creator.jpg" alt="" />
                         <p>«Для меня боевые искусства - это поиск чего-то внутреннего. Это не просто физическая дисциплина ».</p>

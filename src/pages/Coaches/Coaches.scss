@@ -20,7 +20,7 @@ $bjj: #0c0cc4;
         &-select {
             display: flex;
             flex-direction: column;
-            span {
+            &-views {
                 display: block;
                 margin-bottom: 10px;
                 font-weight: 500;

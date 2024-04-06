@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './Schedule.scss';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { sports, timeSlots } from '../../utils/utils.js';
@@ -19,10 +19,10 @@ interface Day {
 }
 
 const sportColors: { [key: string]: string } = {
-    'тайский-бокс': 'green',
-    мма: 'brown',
-    'джиу-джитсу': 'blue',
-    бокс: 'red',
+    'тайский-бокс': '#0f3f0f',
+    мма: '#eee67d',
+    'джиу-джитсу': '#0c0cc4',
+    бокс: '#e31e24',
 };
 
 const Schedule: React.FC<ScheduleProps> = () => {
@@ -156,6 +156,10 @@ const Schedule: React.FC<ScheduleProps> = () => {
         }
         return '';
     };
+
+    useEffect(() => {
+        document.title = 'Расписание тренировок';
+    }, []);
 
     return (
         <>
