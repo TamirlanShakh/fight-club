@@ -56,10 +56,10 @@
     font-family: 'Jost';
 }
 
-$mma: brown;
-$box: red;
-$thai: green;
-$jiu: blue;
+$mma: #eee67d;
+$box: #e31e24;
+$thai: #0f3f0f;
+$bjj: #0c0cc4;
 
 .schedule-container {
     display: flex;
@@ -124,7 +124,7 @@ $jiu: blue;
 }
 
 .schedule-table thead th {
-    background-color: $jiu;
+    background-color: $bjj;
     color: #fff;
     font-weight: normal;
     position: sticky;
@@ -223,7 +223,7 @@ $jiu: blue;
                 background-color: $mma;
             }
             &.jiu {
-                background-color: $jiu;
+                background-color: $bjj;
             }
             &.box {
                 background-color: $box;
