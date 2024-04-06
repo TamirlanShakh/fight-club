@@ -38,8 +38,7 @@ const Reviews = () => {
             <section className="reviews">
                 <div className="container">
                     <h1 className="reviews__title">
-                        Отзывы <br />
-                        <span>Fight club</span>
+                        Отзывы <span>Fight club</span>
                     </h1>
                     <h3 className="reviews__subtitle">Мы признательны за ваши оценки. Спасибо!</h3>
                 </div>
