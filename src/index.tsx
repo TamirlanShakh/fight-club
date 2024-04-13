@@ -11,6 +11,7 @@ import MainPages from './pages/MainPages/index.tsx';
 import Reviews from './pages/Reviews/index.tsx';
 import Academy from './pages/Academy/index.tsx';
 import Sections from './pages/Sections/index.tsx';
+import Price from './pages/Price/index.tsx';
 
 const routes = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ const routes = createBrowserRouter([
             {
                 path: '/sections',
                 element: <Sections />,
+            },
+            {
+                path: '/price',
+                element: <Price />,
             },
         ],
     },

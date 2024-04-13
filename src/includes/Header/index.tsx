@@ -35,7 +35,7 @@ const Header = () => {
                                 <Link to="/schedule">Расписание</Link>
                             </li>
                             <li>
-                                <Link to="">Стоимость</Link>
+                                <Link to="/price">Стоимость</Link>
                             </li>
                         </ul>
                     </nav>
