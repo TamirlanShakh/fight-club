@@ -31,6 +31,7 @@ $bjj: #0c0cc4;
                 width: 100%;
                 position: relative;
                 height: 300px;
+                border-radius: 10px;
                 &::after {
                     content: '';
                     display: block;
@@ -89,6 +90,7 @@ $bjj: #0c0cc4;
                 img {
                     height: 300px;
                     width: 100%;
+                    border-radius: 10px;
                 }
                 h3 {
                     display: block;
@@ -110,7 +112,7 @@ $bjj: #0c0cc4;
                 }
             }
             .info {
-                padding: 10px;
+                padding: 15px 10px;
                 &-prices {
                     p {
                         font-size: 18px;
