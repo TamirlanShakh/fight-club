@@ -1,0 +1,178 @@
+$mma: #eee67d;
+$box: #e31e24;
+$thai: #0f3f0f;
+$bjj: #0c0cc4;
+
+.price {
+    padding: 30px 0;
+    .container {
+    }
+    &__title {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        font-weight: 500;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        span {
+            color: $box;
+        }
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        &-item {
+            width: 45%;
+            max-width: 550px;
+            border-radius: 10px;
+            .image-wrapper {
+                width: 100%;
+                position: relative;
+                height: 300px;
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.3;
+                }
+                &.box {
+                    &::after {
+                        background-color: $box;
+                    }
+                    h3 {
+                        text-shadow: 1px 1px 2px $box, 0 0 1em #fff, 0 0 0.2em #fff;
+                    }
+                    span {
+                        text-shadow: 1px 1px 2px $box, 0 0 1em #fff, 0 0 0.2em #fff;
+                    }
+                }
+                &.mma {
+                    &::after {
+                        background-color: $mma;
+                    }
+                    h3 {
+                        text-shadow: 1px 1px 2px $mma, 0 0 1em #fff, 0 0 0.2em #fff;
+                    }
+                    span {
+                        text-shadow: 1px 1px 2px $mma, 0 0 1em #fff, 0 0 0.2em #fff;
+                    }
+                }
+                &.thai {
+                    &::after {
+                        background-color: $thai;
+                    }
+                    h3 {
+                        text-shadow: 1px 1px 2px $thai, 0 0 1em #fff, 0 0 0.2em #fff;
+                    }
+                    span {
+                        text-shadow: 1px 1px 2px $thai, 0 0 1em #fff, 0 0 0.2em #fff;
+                    }
+                }
+                &.bjj {
+                    &::after {
+                        background-color: $bjj;
+                    }
+                    h3 {
+                        text-shadow: 1px 1px 2px $bjj, 0 0 1em #fff, 0 0 0.2em #fff;
+                    }
+                    span {
+                        text-shadow: 1px 1px 2px $bjj, 0 0 1em #fff, 0 0 0.2em #fff;
+                    }
+                }
+
+                img {
+                    height: 300px;
+                    width: 100%;
+                }
+                h3 {
+                    display: block;
+                    position: absolute;
+                    top: 20px;
+                    left: 20px;
+                    color: #fff;
+                    font-size: 26px;
+                    z-index: 1;
+                }
+                span {
+                    display: block;
+                    position: absolute;
+                    bottom: 20px;
+                    right: 20px;
+                    color: #fff;
+                    font-size: 26px;
+                    z-index: 1;
+                }
+            }
+            .info {
+                padding: 10px;
+                &-prices {
+                    p {
+                        font-size: 18px;
+                        display: flex;
+                        align-items: center;
+                        line-height: 2rem;
+                        span {
+                            display: block;
+                            font-size: 22px;
+                            margin-left: auto;
+                        }
+                    }
+                }
+            }
+            .button {
+                width: 100%;
+                &.box {
+                    button {
+                        border: 1px solid $box;
+                        &:hover {
+                            background-color: $box;
+                        }
+                    }
+                }
+                &.mma {
+                    button {
+                        border: 1px solid $mma;
+                        &:hover {
+                            background-color: $mma;
+                        }
+                    }
+                }
+                &.bjj {
+                    button {
+                        border: 1px solid $bjj;
+                        &:hover {
+                            background-color: $bjj;
+                        }
+                    }
+                }
+                &.thai {
+                    button {
+                        border: 1px solid $thai;
+                        &:hover {
+                            background-color: $thai;
+                        }
+                    }
+                }
+                button {
+                    width: 100%;
+                    height: 60px;
+                    background-color: transparent;
+                    color: #000;
+                    font-family: 'Jost';
+                    border: 1px solid #000;
+                    transition: all 0.3s;
+                    &:hover {
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
