@@ -1,0 +1,16 @@
+{
+    "coaches": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "position": "Head coach",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+            "id": 2,
+            "name": "Jane Doe",
+            "position": "Assistant coach",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+    ]
+}

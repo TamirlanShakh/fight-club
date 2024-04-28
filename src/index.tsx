@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import 'reset-css';
 import './styles/index.scss';
 import Home from './pages/Home/index.tsx';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Admin from './pages/Admin/index.tsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Schedule from './pages/Schedule/index.tsx';
 import About from './pages/About/index.tsx';
 import Coaches from './pages/Coaches/index.tsx';
@@ -13,7 +14,7 @@ import Academy from './pages/Academy/index.tsx';
 import Sections from './pages/Sections/index.tsx';
 import Price from './pages/Price/index.tsx';
 
-const routes = createBrowserRouter([
+const router = createBrowserRouter([
     {
         path: '/',
         element: <MainPages />,
@@ -52,7 +53,11 @@ const routes = createBrowserRouter([
             },
         ],
     },
+    {
+        path: '/admin/*',
+        element: <Admin />,
+    },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root') as Element);
-root.render(<RouterProvider router={routes} />);
+root.render(<RouterProvider router={router} />);
