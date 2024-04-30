@@ -1,20 +1,20 @@
-import React from 'react';
-import { Admin, Resource } from 'react-admin';
-import { Route } from 'react-router-dom';
-import CoachList from './Coaches/index.tsx';
-// import ScheduleList from './Schedule/index.tsx';
-// import GymList from './Gym/index.tsx';
+import { Admin, Resource, ShowGuesser } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
+import PostIcon from '@mui/icons-material/Book';
+import UserIcon from '@mui/icons-material/Group';
 
-const AdminComponent = () => (
-    <Admin dataProvider={jsonServerProvider('http://localhost:3001/db.json')}>
-        <Resource name="coaches" list={CoachList} />
-        {/* <Resource name="schedule" list={ScheduleList} /> */}
-        {/* <Resource name="gym" list={GymList} /> */}
-        <Route path="/admin/coaches" />
-        {/* <Route path="/admin/schedule" /> */}
-        {/* <Route path="/admin/gym" /> */}
+import { PostList, PostEdit, PostCreate } from './posts.tsx';
+import { UserList } from './users.tsx';
+import { Dashboard } from './Dashboard.tsx';
+import React from 'react';
+
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+
+const App = () => (
+    <Admin dataProvider={dataProvider} basename="/admin">
+        <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} options={{ label: 'Посты' }} />
+        <Resource name="users" list={UserList} show={ShowGuesser} icon={UserIcon} recordRepresentation="name" options={{ label: 'Пользователи' }} />
     </Admin>
 );
 
-export default AdminComponent;
+export default App;

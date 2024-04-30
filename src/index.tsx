@@ -13,6 +13,7 @@ import Reviews from './pages/Reviews/index.tsx';
 import Academy from './pages/Academy/index.tsx';
 import Sections from './pages/Sections/index.tsx';
 import Price from './pages/Price/index.tsx';
+import MyLoginPage from './pages/Admin/MyLoginPage.tsx';
 
 const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
                 element: <Price />,
             },
         ],
+    },
+    {
+        path: '/login',
+        element: <MyLoginPage />,
     },
     {
         path: '/admin/*',
