@@ -1,39 +1,29 @@
 import { AuthProvider } from 'react-admin';
 
-const authProvider = {
-    login: ({ username, password }) => {
-        const storedUser = localStorage.getItem('user');
-        if (!storedUser) {
-            return Promise.reject({ message: 'Invalid credentials' });
-        }
-        const user = JSON.parse(storedUser);
-        if (username !== user.username || password !== user.password) {
-            return Promise.reject({ message: 'Invalid credentials' });
-        }
-        localStorage.setItem('authenticated', 'true');
+export const authProvider: AuthProvider = {
+    // called when the user attempts to log in
+    login: ({ username }: { username: string }) => {
+        localStorage.setItem('username', username);
+        // accept all username/password combinations
         return Promise.resolve();
     },
+    // called when the user clicks on the logout button
     logout: () => {
-        localStorage.removeItem('authenticated');
+        localStorage.removeItem('username');
         return Promise.resolve();
     },
-    checkAuth: () => {
-        return localStorage.getItem('authenticated') ? Promise.resolve() : Promise.reject();
-    },
-    checkError: ({ status }) => {
+    // called when the API returns an error
+    checkError: ({ status }: { status: number }) => {
         if (status === 401 || status === 403) {
-            localStorage.removeItem('authenticated');
+            localStorage.removeItem('username');
             return Promise.reject();
         }
         return Promise.resolve();
     },
+    // called when the user navigates to a new location, to check for authentication
+    checkAuth: () => {
+        return localStorage.getItem('username') ? Promise.resolve() : Promise.reject();
+    },
+    // called when the user navigates to a new location, to check for permissions / roles
     getPermissions: () => Promise.resolve(),
 };
-
-const user = {
-    username: 'admin',
-    password: 'password',
-};
-localStorage.setItem('user', JSON.stringify(user));
-
-export default authProvider;

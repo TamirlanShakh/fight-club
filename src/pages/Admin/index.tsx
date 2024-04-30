@@ -6,12 +6,14 @@ import UserIcon from '@mui/icons-material/Group';
 import { PostList, PostEdit, PostCreate } from './posts.tsx';
 import { UserList } from './users.tsx';
 import { Dashboard } from './Dashboard.tsx';
+import { authProvider } from './authProvider.ts';
+
 import React from 'react';
 
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 
 const App = () => (
-    <Admin dataProvider={dataProvider} basename="/admin">
+    <Admin dataProvider={dataProvider} basename="/admin" authProvider={authProvider}>
         <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} options={{ label: 'Посты' }} />
         <Resource name="users" list={UserList} show={ShowGuesser} icon={UserIcon} recordRepresentation="name" options={{ label: 'Пользователи' }} />
     </Admin>
