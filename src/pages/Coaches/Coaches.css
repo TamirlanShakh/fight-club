@@ -1,0 +1,361 @@
+.coaches {
+  padding: 30px 0;
+}
+.coaches__header {
+  background-color: #f5f5f5;
+  padding: 30px 0;
+  margin-bottom: 20px;
+}
+.coaches__title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: inherit;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.coaches__title span {
+  color: #e31e24;
+}
+.coaches__text {
+  display: block;
+  margin-bottom: 25px;
+  line-height: 1.4rem;
+  text-align: center;
+  width: 100%;
+  font-size: 1.375rem;
+  line-height: 1.37;
+  font-weight: 400;
+}
+.coaches__list-select {
+  display: flex;
+  flex-direction: column;
+}
+.coaches__list-select-views {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+.coaches__list-select .coaches-select label {
+  color: #000;
+  font-family: "Jost";
+}
+.coaches__list-select .coaches-select fieldset {
+  border: 1px solid #e31e24 !important;
+  outline: none;
+}
+.coaches__list-select .coaches-select div {
+  color: gray;
+}
+.coaches__list-select .coaches-select div:first-child {
+  background-color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  position: relative;
+  color: #000;
+}
+.coaches__list-select .coaches-select div svg {
+  fill: #e31e24;
+}
+
+.coaches__list-cards {
+  margin: 20px 0;
+  -moz-column-gap: 50px;
+  column-gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 50px;
+}
+.coaches__list-cards .coach {
+  container-type: inline-size;
+  background-color: #fff;
+  height: 100%;
+  max-width: 784px;
+  position: relative;
+  width: 100%;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  max-height: 627px;
+  display: flex;
+  border-left: 7px solid #e31e24;
+  box-sizing: border-box;
+}
+.coaches__list-cards .coach.mma {
+  border-left: 7px solid #eee67d;
+}
+.coaches__list-cards .coach.mma .coach__more::-webkit-scrollbar-thumb {
+  background-color: #eee67d;
+}
+.coaches__list-cards .coach.mma .coach__button button {
+  border: 1px solid #eee67d;
+  font-family: "Jost";
+}
+.coaches__list-cards .coach.mma .coach__button button:hover {
+  background-color: #eee67d;
+}
+.coaches__list-cards .coach.box {
+  border-left: 7px solid #e31e24;
+}
+.coaches__list-cards .coach.box .coach__more::-webkit-scrollbar-thumb {
+  background-color: #e31e24;
+}
+.coaches__list-cards .coach.box .coach__button button {
+  border: 1px solid #e31e24;
+}
+.coaches__list-cards .coach.box .coach__button button:hover {
+  background-color: #e31e24;
+}
+.coaches__list-cards .coach.thai {
+  border-left: 7px solid #0f3f0f;
+}
+.coaches__list-cards .coach.thai .coach__more::-webkit-scrollbar-thumb {
+  background-color: #0f3f0f;
+}
+.coaches__list-cards .coach.thai .coach__button button {
+  border: 1px solid #0f3f0f;
+}
+.coaches__list-cards .coach.thai .coach__button button:hover {
+  background-color: #0f3f0f;
+}
+.coaches__list-cards .coach.jiu {
+  border-left: 7px solid #0c0cc4;
+}
+.coaches__list-cards .coach.jiu .coach__more::-webkit-scrollbar-thumb {
+  background-color: #0c0cc4;
+}
+.coaches__list-cards .coach.jiu .coach__button button {
+  border: 1px solid #0c0cc4;
+}
+.coaches__list-cards .coach.jiu .coach__button button:hover {
+  background-color: #0c0cc4;
+}
+.coaches__list-cards .coach__desc {
+  min-width: 250px;
+  padding: 35px 0 35px 37px;
+  width: 45%;
+}
+.coaches__list-cards .coach__name {
+  font-size: 26px;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.coaches__list-cards .coach__more {
+  height: 400px;
+  overflow-y: scroll;
+  padding-right: 20px;
+  overflow-x: hidden;
+  margin-bottom: 16px;
+}
+.coaches__list-cards .coach__more::-webkit-scrollbar {
+  width: 7px;
+}
+.coaches__list-cards .coach__more::-webkit-scrollbar-thumb {
+  background-color: #e31e24;
+}
+.coaches__list-cards .coach__more::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+.coaches__list-cards .coach__more .coach__line .title {
+  font-weight: 600;
+  line-height: 1.4rem;
+  padding: 0;
+  font-size: 16px;
+  margin: 0 0 15px;
+  text-transform: uppercase;
+}
+.coaches__list-cards .coach__more .coach__line .desc {
+  margin-bottom: 25px;
+  line-height: 20px;
+}
+.coaches__list-cards .coach__more .coach__another-info ul li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.4rem;
+  margin: 0 0 20px;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.coaches__list-cards .coach__more .coach__another-info ul li.title {
+  font-weight: 600;
+  line-height: 1.4rem;
+  padding: 0;
+  font-size: 16px;
+  margin: 0 0 15px;
+  text-transform: uppercase;
+}
+.coaches__list-cards .coach__more .coach__about .title {
+  font-weight: 600;
+  line-height: 1.4rem;
+  padding: 0;
+  font-size: 16px;
+  margin: 0 0 15px;
+  text-transform: uppercase;
+}
+.coaches__list-cards .coach__more .coach__about .desc {
+  margin-bottom: 25px;
+  line-height: 20px;
+}
+.coaches__list-cards .coach .coach__button {
+  max-width: 250px;
+}
+.coaches__list-cards .coach .coach__button button {
+  align-items: center;
+  align-self: stretch;
+  background-color: transparent;
+  border: 1px solid #e62f43;
+  color: #292b30;
+  cursor: pointer;
+  display: flex;
+  font-family: "Jost";
+  font-size: 14px;
+  gap: 10px;
+  justify-content: center;
+  line-height: 16px;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+  transition-property: color, background-color, opacity;
+  text-transform: capitalize;
+}
+.coaches__list-cards .coach .coach__button button:hover {
+  background-color: #e62f43;
+  color: #fff;
+}
+.coaches__list-cards .coach__photo {
+  max-width: 60%;
+}
+.coaches__list-cards .coach__photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.popup__coach-container {
+  border-radius: 1px;
+  display: flex;
+  margin: auto;
+  padding: 8px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  max-width: 900px;
+  gap: 30px;
+}
+.popup__coach-photo {
+  max-width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.popup__coach-info {
+  padding: 50px 35px;
+}
+.popup__coach-title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.popup__coach-subtitle {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.popup__input {
+  max-width: 325px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.popup__input span {
+  color: #292b30;
+  font-size: 17px;
+  line-height: 25px;
+}
+.popup__input input {
+  color: #292b30;
+  font-size: 17px;
+  line-height: 25px;
+  background-color: #fff;
+  border: none;
+  border-radius: 1px;
+  padding: 20px 16px;
+  margin-bottom: 10px;
+  font-family: "Jost";
+}
+.popup__input input:hover {
+  outline: 2px solid #e62f43;
+}
+.popup__input input:focus-visible {
+  outline: 2px solid #e62f43;
+}
+.popup__button button {
+  align-items: center;
+  align-self: stretch;
+  background-color: transparent;
+  border: 1px solid #e62f43;
+  color: #292b30;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  gap: 10px;
+  justify-content: center;
+  line-height: 16px;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-size: 16px;
+  height: 70px;
+  line-height: 18px;
+  max-width: 325px;
+  padding: 26px 20px;
+  width: 100%;
+  background-color: #e62f43;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-family: "Jost";
+}
+.popup__button button:hover {
+  background-color: #fff;
+  color: #292b30;
+}
+.popup__privacy input {
+  margin-right: 8px;
+}
+.popup__privacy span {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+  opacity: 0.7;
+  padding: 0;
+}
+.popup__privacy span a {
+  color: #e62f43;
+  transition: color 0.3s ease;
+}
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper,
+.css-uhb5lp {
+  max-width: 100% !important;
+}
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  display: none !important;
+}
+
+.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+  line-height: unset;
+}/*# sourceMappingURL=Coaches.css.map */

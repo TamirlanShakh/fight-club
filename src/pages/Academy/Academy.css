@@ -1,0 +1,147 @@
+.academy {
+  padding: 30px 0;
+}
+.academy__top-about {
+  background-color: #f5f5f5;
+  margin-bottom: 30px;
+}
+.academy__top-about .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.academy__top-about-left {
+  max-width: 45%;
+  width: 100%;
+}
+.academy__top-about-left img {
+  width: 150px;
+}
+.academy__top-about-left .title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: inherit;
+  text-transform: uppercase;
+}
+.academy__top-about-left .title span {
+  color: #e31e24;
+}
+.academy__top-about-right {
+  max-width: 48%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.academy__top-about-right span {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: inherit;
+}
+.academy__middle-about {
+  margin-bottom: 30px;
+}
+.academy__middle-about .container {
+  padding: 30px;
+}
+.academy__middle-about .container .title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: inherit;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+.academy__middle-about .container .title span {
+  color: #e31e24;
+}
+.academy__middle-about .container .creator {
+  margin-bottom: 30px;
+  font-size: 1.13rem;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: inherit;
+  text-transform: uppercase;
+}
+.academy__middle-about .container .creator span {
+  font-weight: 700;
+}
+.academy__middle-about .container img {
+  max-height: 460px;
+  margin-bottom: 15px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.academy__middle-about .container p {
+  font-size: 1.5rem;
+  line-height: 1.37;
+  font-weight: 400;
+  text-align: inherit;
+}
+.academy__bottom-about {
+  background-color: #f5f5f5;
+}
+.academy__bottom-about .container {
+  padding: 30px;
+}
+.academy__bottom-about .container .title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: inherit;
+  text-align: center;
+}
+.academy__bottom-about .container .subtitle {
+  font-size: 1.375rem;
+  line-height: 1.37;
+  font-weight: 400;
+  text-align: inherit;
+  margin-bottom: 20px;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.academy__bottom-about-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.academy__bottom-about-sections .section {
+  height: 150px;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.academy__bottom-about-sections .section:hover {
+  transform: scale(1.09);
+}
+.academy__bottom-about-sections .section img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.academy__bottom-about-sections .section span {
+  position: absolute;
+  color: #fff;
+  font-size: 1.375rem;
+  line-height: 1.37;
+  font-weight: 400;
+  text-align: inherit;
+  left: 30px;
+  top: 30px;
+}
+.academy__bottom-about-sections .section span.bjj {
+  text-shadow: 1px 1px 2px #0c0cc4, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.academy__bottom-about-sections .section span.box {
+  text-shadow: 1px 1px 2px #e31e24, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.academy__bottom-about-sections .section span.mma {
+  text-shadow: 1px 1px 2px #eee67d, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.academy__bottom-about-sections .section span.thai {
+  text-shadow: 1px 1px 2px #0f3f0f, 0 0 1em #fff, 0 0 0.2em #fff;
+}/*# sourceMappingURL=Academy.css.map */

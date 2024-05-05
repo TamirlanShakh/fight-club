@@ -1,0 +1,153 @@
+.price {
+  padding: 30px 0;
+}
+.price__title {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.price__title span {
+  color: #e31e24;
+}
+.price__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.price__list-item {
+  width: 50%;
+  max-width: 550px;
+}
+.price__list-item .image-wrapper {
+  width: 100%;
+  position: relative;
+  height: 300px;
+}
+.price__list-item .image-wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  border-radius: 10px;
+}
+.price__list-item .image-wrapper.box::after {
+  background-color: #e31e24;
+}
+.price__list-item .image-wrapper.box h3 {
+  text-shadow: 1px 1px 2px #e31e24, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.price__list-item .image-wrapper.box span {
+  text-shadow: 1px 1px 2px #e31e24, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.price__list-item .image-wrapper.mma::after {
+  background-color: #eee67d;
+}
+.price__list-item .image-wrapper.mma h3 {
+  text-shadow: 1px 1px 2px #eee67d, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.price__list-item .image-wrapper.mma span {
+  text-shadow: 1px 1px 2px #eee67d, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.price__list-item .image-wrapper.thai::after {
+  background-color: #0f3f0f;
+}
+.price__list-item .image-wrapper.thai h3 {
+  text-shadow: 1px 1px 2px #0f3f0f, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.price__list-item .image-wrapper.thai span {
+  text-shadow: 1px 1px 2px #0f3f0f, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.price__list-item .image-wrapper.bjj::after {
+  background-color: #0c0cc4;
+}
+.price__list-item .image-wrapper.bjj h3 {
+  text-shadow: 1px 1px 2px #0c0cc4, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.price__list-item .image-wrapper.bjj span {
+  text-shadow: 1px 1px 2px #0c0cc4, 0 0 1em #fff, 0 0 0.2em #fff;
+}
+.price__list-item .image-wrapper img {
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+}
+.price__list-item .image-wrapper h3 {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 26px;
+  z-index: 1;
+}
+.price__list-item .image-wrapper span {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #fff;
+  font-size: 26px;
+  z-index: 1;
+}
+.price__list-item .info {
+  padding: 15px 10px;
+}
+.price__list-item .info-prices p {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  line-height: 2rem;
+}
+.price__list-item .info-prices p span {
+  display: block;
+  font-size: 22px;
+  margin-left: auto;
+}
+.price__list-item .button {
+  width: 100%;
+}
+.price__list-item .button.box button {
+  border: 1px solid #e31e24;
+}
+.price__list-item .button.box button:hover {
+  background-color: #e31e24;
+}
+.price__list-item .button.mma button {
+  border: 1px solid #eee67d;
+}
+.price__list-item .button.mma button:hover {
+  background-color: #eee67d;
+}
+.price__list-item .button.bjj button {
+  border: 1px solid #0c0cc4;
+}
+.price__list-item .button.bjj button:hover {
+  background-color: #0c0cc4;
+}
+.price__list-item .button.thai button {
+  border: 1px solid #0f3f0f;
+}
+.price__list-item .button.thai button:hover {
+  background-color: #0f3f0f;
+}
+.price__list-item .button button {
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  color: #000;
+  font-family: "Jost";
+  border: 1px solid #000;
+  transition: all 0.3s;
+}
+.price__list-item .button button:hover {
+  background-color: #000;
+  color: #fff;
+}/*# sourceMappingURL=Price.css.map */

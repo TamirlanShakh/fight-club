@@ -9,8 +9,6 @@ interface Coach {
     description: string;
 }
 
-console.log(coaches);
-
 const CoachList = () => (
     <>
         <List>

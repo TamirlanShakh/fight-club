@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/Jost-Bold.eot");
+  src: local("/fonts/Jost Bold"), local("/fonts/Jost-Bold"), url("/fonts/Jost-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/Jost-Bold.woff") format("woff"), url("/fonts/Jost-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("/fonts/Jost-Regular.eot");
+  src: local("/fonts/Jost"), local("/fonts/Jost-Regular"), url("/fonts/Jost-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Jost-Regular.woff") format("woff"), url("/fonts/Jost-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("../fonts/Jost-Medium.eot");
+  src: local("../fonts/Jost Medium"), local("../fonts/Jost-Medium"), url("../fonts/Jost-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Jost-Medium.woff") format("woff"), url("../fonts/Jost-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("../fonts/Jost-Black.eot");
+  src: local("../fonts/Jost Black"), local("../fonts/Jost-Black"), url("../fonts/Jost-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/Jost-Black.woff") format("woff"), url("../fonts/Jost-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Jost";
+  src: url("../fonts/Jost-Light.eot");
+  src: local("../fonts/Jost Light"), local("../fonts/Jost-Light"), url("../fonts/Jost-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Jost-Light.woff") format("woff"), url("../fonts/Jost-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Jost";
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0px 15px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+button {
+  text-transform: initial !important;
+}/*# sourceMappingURL=index.css.map */

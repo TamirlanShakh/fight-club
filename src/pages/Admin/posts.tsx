@@ -1,10 +1,23 @@
 import React from 'react';
-import { List, Datagrid, TextField, ReferenceField, EditButton, Edit, Create, SimpleForm, ReferenceInput, TextInput, useRecordContext } from 'react-admin';
+import {
+    List,
+    Datagrid,
+    TextField,
+    ReferenceField,
+    EditButton,
+    Edit,
+    Create,
+    SimpleForm,
+    ReferenceInput,
+    TextInput,
+    useRecordContext,
+    Pagination,
+} from 'react-admin';
 
-const postFilters = [<TextInput source="q" label="Search" alwaysOn />, <ReferenceInput source="userId" label="User" reference="users" />];
+const postFilters = [<TextInput source="q" label="Поиск" alwaysOn />, <ReferenceInput source="userId" label="Пользователи" reference="users" />];
 
-export const PostList = () => (
-    <List filters={postFilters}>
+export const PostList = props => (
+    <List filters={postFilters} pagination={<Pagination rowsPerPageOptions={[]} perPage={30} />} {...props}>
         <Datagrid>
             <TextField source="id" />
             <ReferenceField source="userId" reference="users" link="show" />

@@ -1,0 +1,243 @@
+.header {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0px auto;
+  gap: 10px;
+}
+.header__top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  max-width: 130px;
+  margin: 0 30px;
+}
+.header__logo img {
+  width: 100%;
+  height: 100%;
+}
+.header nav {
+  width: 58%;
+}
+.header nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header nav ul li {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+.header nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3px;
+}
+.header nav ul li a:after {
+  display: block;
+  position: absolute;
+  content: "";
+  transition: all 0.5s;
+  width: 0%;
+  margin: auto;
+  height: 2px;
+  bottom: 0;
+}
+.header nav ul li a:hover {
+  color: #e31e24;
+}
+.header nav ul li a:hover:after {
+  width: 100%;
+  height: 2px;
+  background-color: #e31e24;
+}
+.header .address {
+  display: flex;
+  font-size: 14px;
+  color: #636260;
+  line-height: 1.5;
+  width: 33%;
+}
+.header .address svg {
+  margin-right: 5px;
+}
+.header .address .desc {
+  display: flex;
+  flex-direction: column;
+}
+.header .address .desc span:last-child {
+  text-align: center;
+}
+.header .schedule {
+  font-size: 14px;
+  color: #636260;
+  line-height: 1.5;
+  display: flex;
+  width: 33%;
+  justify-content: center;
+  padding: 0 !important;
+}
+.header .schedule svg {
+  margin-right: 5px;
+}
+.header .schedule .desc {
+  display: flex;
+  flex-direction: column;
+}
+.header .schedule .desc span:last-child {
+  text-align: center;
+}
+.header .call {
+  display: flex;
+  width: auto;
+  justify-content: flex-end;
+  gap: 20px;
+  width: 33%;
+}
+.header .call .contacts {
+  display: flex;
+}
+.header .call .contacts svg {
+  margin-right: 5px;
+  color: #636260;
+}
+.header .call .contacts .desc {
+  display: flex;
+  flex-direction: column;
+}
+.header .call .contacts .desc .phone {
+  font-size: 14px;
+  color: #636260;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.header .call .contacts .desc .phone:hover {
+  color: #eb212e;
+}
+.header .call .contacts .desc span {
+  text-align: center;
+}
+.header .call button {
+  display: block;
+  max-width: 200px;
+  width: 100%;
+  height: 40px;
+  background: #eb212e;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  font-family: "Jost";
+}
+.header .call button:hover {
+  cursor: pointer;
+}
+
+.popup__container {
+  padding: 30px;
+  border-radius: 1px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.popup__title {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.popup__subtitle {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  max-width: 600px;
+  text-align: center;
+}
+.popup form .popup__input {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.popup form .popup__input span {
+  color: #292b30;
+  font-size: 17px;
+  line-height: 25px;
+}
+.popup form .popup__input input {
+  color: #292b30;
+  font-size: 17px;
+  line-height: 25px;
+  background-color: #fff;
+  border: none;
+  border-radius: 1px;
+  padding: 20px 16px;
+  margin-bottom: 10px;
+}
+.popup form .popup__input input:hover {
+  outline: 2px solid #e62f43;
+}
+.popup form .popup__input input:focus-visible {
+  outline: 2px solid #e62f43;
+}
+.popup .popup__button button {
+  align-items: center;
+  align-self: stretch;
+  background-color: transparent;
+  border: 1px solid #e62f43;
+  color: #292b30;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  gap: 10px;
+  justify-content: center;
+  line-height: 16px;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-size: 16px;
+  height: 70px;
+  line-height: 18px;
+  max-width: 100%;
+  padding: 26px 20px;
+  width: 100%;
+  background-color: #e31e24;
+  color: #f2f2f2;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.popup .popup__button button:hover {
+  background-color: #fff;
+  color: #292b30;
+}
+.popup .popup__privacy input {
+  margin-right: 8px;
+}
+.popup .popup__privacy span {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+  opacity: 0.7;
+  padding: 0;
+}
+.popup .popup__privacy span a {
+  color: #e62f43;
+  transition: color 0.3s ease;
+}/*# sourceMappingURL=Header.css.map */
