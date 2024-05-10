@@ -14,7 +14,8 @@ const dataProvider = {
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
         return httpClient(url).then(({ headers, json }) => {
-            return { data: json, total: +headers.get('X-Total-Count') || json.length };
+            const total = parseInt(headers.get('X-Total-Count')) || json.length;
+            return { data: json, total };
         });
     },
 
@@ -80,12 +81,14 @@ const dataProvider = {
         }).then(({ json }) => ({ data: json })),
 
     deleteMany: (resource, params) => {
-        const query = {
-            filter: JSON.stringify({ id: params.ids }),
-        };
-        return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
-            method: 'DELETE',
-        }).then(({ json }) => ({ data: json }));
+        const { ids } = params;
+        return Promise.all(
+            ids.map(id =>
+                httpClient(`${apiUrl}/${resource}/${id}`, {
+                    method: 'DELETE',
+                }).then(({ json }) => ({ data: json }))
+            )
+        ).then(responses => ({ data: responses }));
     },
 };
 

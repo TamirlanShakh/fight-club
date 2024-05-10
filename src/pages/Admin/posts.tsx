@@ -17,7 +17,7 @@ import {
 const postFilters = [<TextInput source="q" label="Поиск" alwaysOn />, <ReferenceInput source="userId" label="Пользователи" reference="users" />];
 
 export const PostList = props => (
-    <List filters={postFilters} pagination={<Pagination rowsPerPageOptions={[]} perPage={30} />} {...props}>
+    <List {...props} filters={postFilters} pagination={<Pagination rowsPerPageOptions={[10, 20, 30, 40, 50]} />}>
         <Datagrid>
             <TextField source="id" />
             <ReferenceField source="userId" reference="users" link="show" />

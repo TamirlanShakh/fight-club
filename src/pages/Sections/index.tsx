@@ -53,7 +53,7 @@ const Sections = () => {
                         </Link>
                     </div>
                     <div className="section" style={{ background: `url(/images/link-price.jpg)no-repeat center/cover` }}>
-                        <Link to={'/prices'} className="link">
+                        <Link to={'/price'} className="link">
                             <div className="section-desc">
                                 <div className="title">Стоимость</div>
                                 <div className="desc">

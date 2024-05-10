@@ -1,26 +1,28 @@
-const express = require('express');
-const app = express();
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const middlewares = jsonServer.defaults();
+const totalCountMiddleware = require('./total-count-middleware');
 
-// Middleware для парсинга JSON
-app.use(express.json());
+server.use(middlewares);
+server.use(totalCountMiddleware);
 
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
+server.use(jsonServer.router('db.json'));
 
-const adapter = new FileSync('db.json');
-const db = low(adapter);
-
-// Middleware для парсинга JSON
-app.use(express.json());
-
-// Получение списка тренеров
-app.get('/admin/coaches', (req, res) => {
-    res.json(db.get('coaches').value());
+server.listen(3001, () => {
+    console.log('JSON Server is running');
 });
 
-// Добавление нового тренера
-app.post('/admin/coaches', (req, res) => {
-    const coach = req.body;
-    db.get('coaches').push(coach).write();
-    res.json(coach);
-});
+module.exports = function (req, res, next) {
+    console.log('Request URL:', req.url);
+    console.log('Request method:', req.method);
+
+    if (req.method === 'GET' && req.url.includes('_page')) {
+        const resource = req.url.split('?')[0].split('/').pop();
+        const db = req.app.locals.db;
+        const total = db[resource].length;
+        res.set('X-Total-Count', total);
+        console.log('X-Total-Count:', total);
+    }
+
+    next();
+};
