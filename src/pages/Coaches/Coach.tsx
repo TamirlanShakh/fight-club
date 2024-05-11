@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Dialog } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { ICoach } from './types';
+import { ICoach } from '../../redux/Coaches/types.ts';
 import { Link } from 'react-router-dom';
 
 interface CoachProps {
@@ -43,10 +43,7 @@ const Coach = ({ sports, coaches, selectedSport, handleChange }: CoachProps) => 
                                     <ul>
                                         <li className="title">Специализация</li>
                                         <li>Персональные и групповые тренировки по боксу</li>
-                                        <li className="title">Достижения</li>
-                                        {coach.achievements.map((achievement, index) => (
-                                            <li key={index}>{achievement}</li>
-                                        ))}
+                                        {/* {coach.achievements && coach.achievements.map((achievement, index) => <li key={index}>{achievement}</li>)} */}
                                     </ul>
                                 </div>
                                 <div className="coach__about">

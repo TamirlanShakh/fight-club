@@ -3,6 +3,10 @@ import './Coaches.scss';
 import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 import Coach from './Coach.tsx';
 import { sports, coaches } from '../../utils/utils.js';
+import { ICoach } from '../../redux/Coaches/types.ts';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCoachlist } from '../../redux/Coaches/index.ts';
+import { AppDispatch, RootState } from '../../redux/store.ts';
 
 const Coaches = () => {
     const [selectedSport, setSelectedSport] = useState('');
@@ -11,11 +15,15 @@ const Coaches = () => {
         setSelectedSport(event.target.value);
     };
 
-    const filteredCoaches = coaches.filter(coach => coach.sport === selectedSport || selectedSport === '');
+    const coachList = useSelector((state: RootState) => state.coaches.coaches);
+    const filteredCoaches = coachList.filter(coach => coach.sport === selectedSport || selectedSport === '');
+    const dispatch = useDispatch<AppDispatch>();
+    // console.log(coachList);
 
     useEffect(() => {
         document.title = 'Тренеры';
-    }, []);
+        dispatch(getCoachlist());
+    }, [dispatch]);
 
     return (
         <>

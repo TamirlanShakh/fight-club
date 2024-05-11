@@ -14,6 +14,10 @@ import Academy from './pages/Academy/index.tsx';
 import Sections from './pages/Sections/index.tsx';
 import Price from './pages/Price/index.tsx';
 import MyLoginPage from './pages/Admin/MyLoginPage.tsx';
+import { Provider } from 'react-redux';
+import { store } from './redux/store.ts';
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 const router = createBrowserRouter([
     {
@@ -64,5 +68,10 @@ const router = createBrowserRouter([
     },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root') as Element);
-root.render(<RouterProvider router={router} />);
+root.render(
+    <Provider store={store}>
+        <RouterProvider router={router} />
+    </Provider>
+);
+
+document.getElementById('root');

@@ -17,27 +17,15 @@ import {
 } from 'react-admin';
 import { sports, coaches } from '../../../utils/utils.js';
 
-interface ICoach {
-    id: number;
-    name: string;
-    img: string;
-    position: string;
-    experience: string;
-    specialization: string;
-    achievements: string[];
-    about: string;
-    sport: string;
-}
-
 const postFilters = [<TextInput source="q" label="Поиск" alwaysOn />, <ReferenceInput source="userId" label="Пользователи" reference="users" />];
 
 export const CoachList = props => (
     <>
         <List {...props} pagination={<Pagination rowsPerPageOptions={[10, 20, 30, 40, 50]} />}>
             <Datagrid rowClick="show">
-                <ReferenceField source="id" reference="coaches" link="show">
+                {/* <ReferenceField source="id" reference="coaches" link="show">
                     <TextField source="name" />
-                </ReferenceField>
+                </ReferenceField> */}
                 {/* <TextField source="id" /> */}
                 <ImageField source="img" title="Фото" src="thumbnail" />
                 <TextField source="name" label="Имя" />
@@ -47,7 +35,7 @@ export const CoachList = props => (
                 <TextField source="achievements" label="Достижения" />
                 <TextField source="about" label="О себе" />
                 <TextField source="sport" label="Вид спорта" />
-                <EditButton />
+                <EditButton label="Изменить" />
             </Datagrid>
         </List>
     </>
