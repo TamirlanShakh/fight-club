@@ -14,8 +14,10 @@ import {
     EditButton,
     ReferenceField,
     ImageField,
+    ImageInput,
 } from 'react-admin';
-import { sports, coaches } from '../../../utils/utils.js';
+import CoachShow from './CoachShow.tsx';
+// import { sports, coaches } from '../../../utils/utils.js';
 
 const postFilters = [<TextInput source="q" label="Поиск" alwaysOn />, <ReferenceInput source="userId" label="Пользователи" reference="users" />];
 
@@ -27,7 +29,7 @@ export const CoachList = props => (
                     <TextField source="name" />
                 </ReferenceField> */}
                 {/* <TextField source="id" /> */}
-                <ImageField source="img" title="Фото" src="thumbnail" />
+                <ImageField source="img" title="Фото" src="thumbnail" label="Фото" />
                 <TextField source="name" label="Имя" />
                 <TextField source="position" label="Должность" />
                 <TextField source="experience" label="Опыт" />
@@ -57,6 +59,9 @@ export const CoachEdit = () => (
             <TextInput source="specialization" label="Специализация" />
             <TextInput source="achievements" label="Достижения" multiline rows={3} />
             <TextInput source="about" label="О себе" multiline rows={5} />
+            <ImageInput source="img" label="Фотография" accept="image/*">
+                <ImageField source="img" title="preview" />
+            </ImageInput>
             <ReferenceInput source="sportId" reference="sports" label="Вид спорта">
                 <SelectInput optionText="name" />
             </ReferenceInput>
@@ -74,6 +79,9 @@ export const CoachCreate = () => (
             <TextInput source="achievements" label="Достижения" multiline rows={3} />
             <TextInput source="about" label="О себе" multiline rows={5} />
             <TextInput source="sport" label="Вид спорта" />
+            <ImageInput source="img" label="Фотография" accept="image/*">
+                <ImageField source="img" title="preview" />
+            </ImageInput>
         </SimpleForm>
     </Create>
 );

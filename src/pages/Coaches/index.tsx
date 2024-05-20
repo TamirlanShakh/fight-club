@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './Coaches.scss';
 import { FormControl, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 import Coach from './Coach.tsx';
-import { sports, coaches } from '../../utils/utils.js';
+// import { sports, coaches } from '../../utils/utils.js';
+// import sports
 import { ICoach } from '../../redux/Coaches/types.ts';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCoachlist } from '../../redux/Coaches/index.ts';
+import { getSportList } from '../../redux/Sports/index.ts';
 import { AppDispatch, RootState } from '../../redux/store.ts';
 
 const Coaches = () => {
@@ -16,6 +18,7 @@ const Coaches = () => {
     };
 
     const coachList = useSelector((state: RootState) => state.coaches.coaches);
+
     const filteredCoaches = coachList.filter(coach => coach.sport === selectedSport || selectedSport === '');
     const dispatch = useDispatch<AppDispatch>();
     // console.log(coachList);
@@ -23,7 +26,7 @@ const Coaches = () => {
     useEffect(() => {
         document.title = 'Тренеры';
         dispatch(getCoachlist());
-    }, [dispatch]);
+    }, [coachList]);
 
     return (
         <>
@@ -56,7 +59,7 @@ const Coaches = () => {
                     </div>
                     <div className="coaches__list-cards">
                         {filteredCoaches.map((coach: ICoach) => (
-                            <Coach key={coach.id} sports={sports} coaches={[coach]} selectedSport={selectedSport} handleChange={handleChange} />
+                            <Coach key={coach.id} coaches={[coach]} selectedSport={selectedSport} handleChange={handleChange} />
                         ))}
                     </div>
                 </div>

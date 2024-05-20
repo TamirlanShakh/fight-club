@@ -1,5 +1,5 @@
 export interface ICoach {
-    id: number;
+    id: number | string;
     name: string;
     img: string;
     position: string;

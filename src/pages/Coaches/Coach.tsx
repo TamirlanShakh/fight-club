@@ -5,13 +5,12 @@ import { ICoach } from '../../redux/Coaches/types.ts';
 import { Link } from 'react-router-dom';
 
 interface CoachProps {
-    sports: any;
     coaches: ICoach[];
     selectedSport: string;
     handleChange: (event: any) => void;
 }
 
-const Coach = ({ sports, coaches, selectedSport, handleChange }: CoachProps) => {
+const Coach = ({ coaches, selectedSport, handleChange }: CoachProps) => {
     const [open, setOpen] = useState(false);
     const [selectedCoach, setSelectedCoach] = useState<ICoach | null>(null);
 

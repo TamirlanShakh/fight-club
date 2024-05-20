@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import coaches from './Coaches/index.ts';
+import sports from './Sports/index.ts';
 
 export const store = configureStore({
     reducer: {
         coaches,
+        sports,
     },
 });
 

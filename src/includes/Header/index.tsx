@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import InputMask from 'react-input-mask';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -17,6 +18,12 @@ const Header = () => {
 
     const onClose = () => {
         setOpen(false);
+    };
+
+    const PhoneInput = () => {
+        const mask = '+7(4|9)xxx-xxx-xx-xx';
+
+        const handleChange = event => {};
     };
 
     return (
@@ -99,7 +106,7 @@ const Header = () => {
                                         </div>
                                         <div className="popup__input">
                                             <span>Ваш телефон</span>
-                                            <input type="text" placeholder="+7 (999) 999-99-99" required />
+                                            <InputMask mask={mask} placeholder="+7(___)-___-__-__" onChange={handleChange} />
                                         </div>
                                         <div className="popup__button">
                                             <button>Записаться на тренировку</button>
