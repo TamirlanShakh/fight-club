@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Header.scss';
 import PlaceIcon from '@mui/icons-material/Place';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -7,7 +7,8 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import InputMask from 'react-input-mask';
+// import InputMask from 'react-input-mask';
+import PhoneInput from '../ModalForm/PhoneInput.tsx';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -20,11 +21,7 @@ const Header = () => {
         setOpen(false);
     };
 
-    const PhoneInput = () => {
-        const mask = '+7(4|9)xxx-xxx-xx-xx';
-
-        const handleChange = event => {};
-    };
+    console.log(PhoneInput);
 
     return (
         <>
@@ -106,7 +103,7 @@ const Header = () => {
                                         </div>
                                         <div className="popup__input">
                                             <span>Ваш телефон</span>
-                                            <InputMask mask={mask} placeholder="+7(___)-___-__-__" onChange={handleChange} />
+                                            <PhoneInput />
                                         </div>
                                         <div className="popup__button">
                                             <button>Записаться на тренировку</button>
