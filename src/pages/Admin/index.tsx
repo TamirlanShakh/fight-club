@@ -6,6 +6,7 @@ import UserIcon from '@mui/icons-material/Group';
 import { PostList, PostEdit, PostCreate } from './posts.tsx';
 import { UserList } from './users.tsx';
 import { CoachCreate, CoachList, CoachEdit } from './Coaches/index.tsx';
+import { SendformsList, SendformsEdit } from './Sendforms/index.tsx';
 import { Dashboard } from './Dashboard.tsx';
 import { authProvider } from './authProvider.ts';
 
@@ -25,6 +26,7 @@ const App = () => (
             icon={PostIcon}
             options={{ label: 'Тренеры' }}
         />
+        <Resource name="sendforms" list={SendformsList} edit={SendformsEdit} icon={PostIcon} options={{ label: 'Заявки' }} />
     </Admin>
 );
 

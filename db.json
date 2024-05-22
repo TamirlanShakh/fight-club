@@ -961,5 +961,10 @@
                 "bs": "target end-to-end models"
             }
         }
-    ]
+    ],
+    "sendforms": {
+        "id": 123,
+        "name": "Иван Иванов",
+        "phone": "+79123456789"
+    }
 }
