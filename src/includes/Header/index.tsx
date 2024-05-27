@@ -8,7 +8,7 @@ import Dialog from '@mui/material/Dialog';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 // import InputMask from 'react-input-mask';
-import PhoneInput from '../ModalForm/PhoneInput.tsx';
+import ModalForm from '../ModalForm/index.tsx';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
@@ -20,8 +20,6 @@ const Header = () => {
     const onClose = () => {
         setOpen(false);
     };
-
-    console.log(PhoneInput);
 
     return (
         <>
@@ -88,36 +86,7 @@ const Header = () => {
                                 <span>Круглосуточно</span>
                             </div>
                         </div>
-                        <Button onClick={onOpen} variant="contained">
-                            Записаться
-                        </Button>
-                        <Dialog open={open} onClose={onClose}>
-                            <Dialog open={open} onClose={onClose} className="popup">
-                                <div className="popup__container">
-                                    <div className="popup__title">Оставьте заявку.</div>
-                                    <div className="popup__subtitle">Мы свяжемся с вами, чтобы записать на тренировку в удобное для вас время</div>
-                                    <form action="">
-                                        <div className="popup__input">
-                                            <span>Ваше имя</span>
-                                            <input type="text" placeholder="Введите ваше имя" required />
-                                        </div>
-                                        <div className="popup__input">
-                                            <span>Ваш телефон</span>
-                                            <PhoneInput />
-                                        </div>
-                                        <div className="popup__button">
-                                            <button>Записаться на тренировку</button>
-                                        </div>
-                                        <label htmlFor="" className="popup__privacy">
-                                            <input type="checkbox" checked />
-                                            <span>
-                                                Я согласен с <Link to="">политикой конфиденциальности</Link>
-                                            </span>
-                                        </label>
-                                    </form>
-                                </div>
-                            </Dialog>
-                        </Dialog>
+                        <ModalForm />
                     </div>
                 </div>
             </header>

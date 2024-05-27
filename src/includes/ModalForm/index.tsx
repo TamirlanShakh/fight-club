@@ -1,9 +1,12 @@
 import { Button, Dialog } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PhoneInput from './PhoneInput.tsx';
+import { Phone } from '@mui/icons-material';
 
 const ModalForm = () => {
     const [open, setOpen] = useState(false);
+    const [formValues, setFormValues] = useState<any>({});
 
     const onOpen = () => {
         setOpen(true);
@@ -12,10 +15,21 @@ const ModalForm = () => {
     const onClose = () => {
         setOpen(false);
     };
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        console.log(formValues);
+
+        setFormValues({
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const sendForm = () => {};
+
     return (
         <>
             <Button onClick={onOpen} variant="contained">
-                Оформить
+                Записаться
             </Button>
             <Dialog open={open} onClose={onClose}>
                 <Dialog open={open} onClose={onClose} className="popup">
@@ -25,14 +39,14 @@ const ModalForm = () => {
                         <form action="">
                             <div className="popup__input">
                                 <span>Ваше имя</span>
-                                <input type="text" placeholder="Введите ваше имя" required />
+                                <input type="text" value={formValues?.name} onChange={onChange} name="name" placeholder="Введите ваше имя" required />
                             </div>
                             <div className="popup__input">
                                 <span>Ваш телефон</span>
-                                <input type="text" placeholder="+7 (999) 999-99-99" required />
+                                <PhoneInput formValuePhone={formValues} onChange={onChange} />
                             </div>
                             <div className="popup__button">
-                                <button>Записаться на тренировку</button>
+                                <button onClick={sendForm}>Записаться на тренировку</button>
                             </div>
                             <label htmlFor="" className="popup__privacy">
                                 <input type="checkbox" checked />

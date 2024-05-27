@@ -26,7 +26,7 @@ const App = () => (
             icon={PostIcon}
             options={{ label: 'Тренеры' }}
         />
-        <Resource name="sendforms" list={SendformsList} edit={SendformsEdit} icon={PostIcon} options={{ label: 'Заявки' }} />
+        <Resource name="sendforms" list={SendformsList} options={{ label: 'Заявки' }} />
     </Admin>
 );
 

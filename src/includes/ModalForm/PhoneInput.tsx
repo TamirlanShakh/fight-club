@@ -3,7 +3,7 @@ import Inputmask from 'inputmask';
 // import 'inputmask/dist/inputmask.css';
 // import '@types/inputmask';
 
-const PhoneInput = () => {
+const PhoneInput = ({ formValuePhone, onChange }) => {
     const inputRef = useRef(null);
 
     useEffect(() => {
@@ -32,12 +32,20 @@ const PhoneInput = () => {
     }, []);
 
     const handleChange = event => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
     };
 
     return (
         <div>
-            <input type="tel" ref={inputRef} placeholder="+7(___)-___-__-__" onChange={handleChange} />
+            <input
+                type="tel"
+                name="phone"
+                value={formValuePhone?.name}
+                onChange={onChange}
+                ref={inputRef}
+                placeholder="+7(___)-___-__-__"
+                // onChange={handleChange}
+            />
         </div>
     );
 };
