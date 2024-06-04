@@ -13,7 +13,7 @@ export const coachSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers(builder) {
-        builder.addCase(getSendForms.fulfilled, (state, action) => {
+        builder.addCase(postSendForms.fulfilled, (state, action) => {
             state.sendforms = action.payload;
             state.status = 'succeeded';
         });
@@ -24,7 +24,7 @@ export const coachSlice = createSlice({
 
 export default coachSlice.reducer;
 
-export const getSendForms = createAsyncThunk('users/getSendForms', async () => {
-    const sendforms = (await axios.get('http://localhost:3001/sendforms')).data;
+export const postSendForms = createAsyncThunk('users/postSendForms', async formValues => {
+    const sendforms = (await axios.post('http://localhost:3001/sendforms', formValues)).data;
     return sendforms;
 });
